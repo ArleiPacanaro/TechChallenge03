@@ -19,7 +19,7 @@ public interface EstacionamentoRepository extends MongoRepository<Estacionamento
     public List<Estacionamento> obterExpirandosFixo(LocalDateTime dta, PeriodoEstacionamento periodo);
 
     @Query("{ $and: [{'data':{$gte:?0}},{'data':{$lte:?1}}] }")
-    public List<Artigo> obterArtigoPorDataHora(LocalDateTime de, LocalDateTime ate);
+    public List<Estacionamento> obterEstacionamentoAVencer(LocalDateTime de, LocalDateTime ate);
 
      */
 }

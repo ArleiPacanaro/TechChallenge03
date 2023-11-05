@@ -36,7 +36,7 @@ public class EstacionamentoService {
         this.estacionamentoRepository = estacionamentoRepository;
     }
 
-    @Transactional
+
     public ResponseEntity<?> iniciarEstacionamento(EstacionamentoEntradaDTO estacionamentoEntradaDTO)
     {
         // validar se existe condutor
@@ -79,7 +79,7 @@ public class EstacionamentoService {
 
     }
 
-    @Transactional
+
     public ResponseEntity<?> encerrarEstacionamento(EstacionamentoSaidaDTO estacionamentoSaidaDTO) {
 
         Estacionamento estacionamento = this.estacionamentoRepository.findById(estacionamentoSaidaDTO.getId()).orElse(null);
