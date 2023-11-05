@@ -31,8 +31,7 @@ public class VeiculoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> obterVeiculoPorId(String id){
-
+    public ResponseEntity<?> obterVeiculoPorId(@PathVariable String id){
         return veiculoService.obterVeiculoPorId(id);
     }
 }

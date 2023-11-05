@@ -32,7 +32,7 @@ public class CondutorService {
         this.mongoTemplate = mongoTemplate;
     }
 
-    @Transactional
+
     public ResponseEntity<?> cadastrarCondutor(CondutorDTO condutorDTO) {
 
         Condutor condutorexistente = this.condutorRepository
@@ -79,7 +79,7 @@ public class CondutorService {
         }
     }
 
-    @Transactional
+
     public ResponseEntity<?> atualizarCondutor(CondutorDTO condutorDTO) {
 
         Condutor condutorexistente = this.condutorRepository

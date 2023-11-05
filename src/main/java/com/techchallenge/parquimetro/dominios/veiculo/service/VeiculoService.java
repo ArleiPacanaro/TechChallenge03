@@ -28,7 +28,6 @@ public class VeiculoService {
         this.condutorRepository = condutorRepository;
     }
 
-    @Transactional
     public ResponseEntity<?> cadastrarVeiculo(String cpf, VeiculoDTO veiculoDTO){
 
         try{

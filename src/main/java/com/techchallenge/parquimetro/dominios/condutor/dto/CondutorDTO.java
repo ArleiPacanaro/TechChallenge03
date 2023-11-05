@@ -13,28 +13,27 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.br.CPF;
 
 
-
 @Getter
 @Setter
 @ApiModel(description = "Representa uma coleção de Condutor")
 public class CondutorDTO {
 
     @ApiModelProperty(value = "Informacao cpf do condutor", example = "33129064079", position = 1)
-    @NotNull(message="CPF é obrigatório")
-    @CPF(message="CPF deve ser válido")
+    @NotNull(message = "CPF é obrigatório")
+    @CPF(message = "CPF deve ser válido")
     private String cpf;
 
     @ApiModelProperty(value = "Informacao nome do condutor", example = "Arlei", position = 1)
-    @NotBlank(message="nome é obrigatório")
+    @NotBlank(message = "nome é obrigatório")
     private String nome;
 
     @ApiModelProperty(value = "Informacao email do condutor", example = "Arlei.lepiani@homail.com", position = 1)
-    @NotNull(message="email é obrigatório")
-    @Email(message="email deve ser valido")
+    @NotNull(message = "email é obrigatório")
+    @Email(message = "email deve ser valido")
     private String email;
 
     @ApiModelProperty(value = "Informacao de forma de pagamento do condutor", example = "PIX,CARTAO_DEBITO,CARTAO_CREDITO", position = 1)
-    @NotNull(message="Informacao de forma de pagamento  é obrigatória")
+    @NotNull(message = "Informacao de forma de pagamento  é obrigatória")
     private FormaPagamento formaPagamento;
 
     @ApiModelProperty(value = "Informacao Pais do Endereco condutor", example = "Brasil", position = 1)
@@ -68,7 +67,7 @@ public class CondutorDTO {
 
     public Condutor toEntity() {
         Condutor condutor =
-                        new Condutor();
+                new Condutor();
         condutor.setCpf(this.getCpf());
         condutor.setEmail(this.getEmail());
         condutor.setFormaPagamento(this.getFormaPagamento());
@@ -85,7 +84,6 @@ public class CondutorDTO {
         //List<Veiculo> veiculos = new ArrayList<>();
         //this.getVeiculos().forEach(veiculo -> veiculos.add(veiculo.toEntity()));
         //condutor.setVeiculos(veiculos);
-
 
 
         return condutor;
@@ -106,8 +104,6 @@ public class CondutorDTO {
         condutorDTO.setLogradouro(entity.getLogradouro());
         condutorDTO.setNumero(entity.getNumero());
         condutorDTO.setComplemento(entity.getComplemento());
-
-
 
 
         return condutorDTO;

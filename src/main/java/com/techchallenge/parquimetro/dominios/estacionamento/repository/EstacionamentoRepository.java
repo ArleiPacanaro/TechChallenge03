@@ -22,4 +22,6 @@ public interface EstacionamentoRepository extends MongoRepository<Estacionamento
     public List<Artigo> obterArtigoPorDataHora(LocalDateTime de, LocalDateTime ate);
 
      */
+
+    public List<Estacionamento> findEstacionamentosByValorIsNullAndFormaPagamentoIsNull();
 }
